@@ -1,4 +1,4 @@
-﻿FROM microsoft/dotnet:1.1-runtime-nanoserver
+﻿FROM FROM microsoft/dotnet:2.0-sdk
 
 WORKDIR /app
 COPY /bin/Debug/netcoreapp2.1/publish/ .
