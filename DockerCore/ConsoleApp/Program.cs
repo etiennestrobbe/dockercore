@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace ConsoleApp
 {
@@ -6,7 +7,12 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World From Docker Core");
+            var i = 1;
+            while(true){
+                
+                Thread.Sleep(2000);
+                Console.WriteLine(String.Format("Hello World From Docker Core times {0}",i++));
+            }
         }
     }
 }
