@@ -1,6 +1,9 @@
-﻿FROM microsoft/dotnet:2.0-sdk
+﻿FROM microsoft/dotnet:2.1-sdk
 
 WORKDIR /app
-COPY /bin/Debug/netcoreapp2.1/publish/ .
+COPY Program.cs .
+COPY ConsoleApp.csproj .
+RUN dotnet restore
+RUN dotnet publish
 
 ENTRYPOINT ["dotnet", "ConsoleApp.dll"]
