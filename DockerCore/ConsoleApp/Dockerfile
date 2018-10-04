@@ -1,9 +1,6 @@
-﻿FROM microsoft/dotnet:2.1-sdk
+﻿FROM microsoft/dotnet:2.1-runtime-alpine
 
 WORKDIR /app
-COPY Program.cs .
-COPY ConsoleApp.csproj .
-RUN dotnet restore
-RUN dotnet publish
+COPY bin/Debug/netcoreapp2.1/publish/ .
 
 ENTRYPOINT ["dotnet", "ConsoleApp.dll"]
